@@ -6,25 +6,28 @@
             <h1>Twitter Topic Modeling</h1>
         </div>
     </div>
+    <form>
     <div class="row">
         <div class="col-sm mb-3">
-                <input type="text" class="form-control form-control-lg" id="userid" placeholder="User ID">
+                <input type="text" class="form-control form-control-lg" id="userid" placeholder="User ID" required>
         </div>
     </div>
-
-    <form>
         <div class="row">
             <div class="col-sm mb-3">
-                <input type="password" class="form-control form-control-lg" id="password" placeholder="Password">
+                <input type="password" class="form-control form-control-lg" id="password" placeholder="Password" required>
             </div>
         </div>
         <div class="row">
             <div class="col-sm mb-3">
-                <button type="submit" class="btn btn-primary">Log In</button>
+                <a class="btn btn-primary" (click)="goHome()">Log In</a>
             </div>
         </div>
     </form>
 </div>
+
+
+<router-outlet></router-outlet>
+
 
 
 
