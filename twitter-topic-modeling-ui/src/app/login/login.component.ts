@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component ({
@@ -7,19 +7,23 @@ import { Router } from '@angular/router';
     styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent implements OnInit  {
+export class LoginComponent {
 
         //router constructor
         constructor(private router: Router) { }
         
-        username: string;
+        //example variables for login credentials
+        userid: string;
         password: string;
 
-        ngOnInit() {
-        }
-
         goHome() : void {
-            this.router.navigate(["home-component"]);
+            if(this.userid == 'admin' && this.password == '123'){
+                this.router.navigate(["dashboard"]);
+            }
+            else {
+                alert("invalid credentials");
+            }
+           
         }
          
 }
