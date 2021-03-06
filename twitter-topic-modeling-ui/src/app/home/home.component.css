@@ -1,0 +1,25 @@
+/*Color Palete source: https://brandpalettes.com/twitter-colors/#:~:text=The%20Twitter%20colors%20consist%20of,extra%20light%20gray%20and%20white.*/
+
+h1 {
+    text-align:center;
+}
+
+/*Heading and Btn container*/
+.container {
+    width:100%;
+    max-width:500px;
+    text-align:center;
+    /*centers it on page*/
+    padding: 150px 0;
+}
+
+/*Launch btn*/
+#launch{
+    border-radius: 100px;
+    border:2px solid rgba(29,161,242);
+}
+
+#launch:hover{
+    background-color:rgba(29,161,242);
+    color:white;
+}
