@@ -17,3 +17,8 @@ h1 {
     display:block;
     margin:auto;
 }
+
+#login-btn {
+    border-radius: 100px;
+    border:2px solid rgba(101,119,134);
+}
