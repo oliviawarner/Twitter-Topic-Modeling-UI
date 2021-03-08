@@ -13,6 +13,11 @@ h1 {
     padding: 150px 0;
 }
 
+#twitterIcon {
+    color:rgba(29,161,242);
+    font-size: 60px;
+}
+
 /*Launch btn*/
 #launch{
     border-radius: 100px;

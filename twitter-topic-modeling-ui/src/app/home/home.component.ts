@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 //router import (nav)
 import { Router } from '@angular/router';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 
 @Component ({
@@ -11,6 +12,8 @@ import { Router } from '@angular/router';
 })
 
 export class HomeComponent {
+  //twitter icon
+  twitterIcon = faTwitter;
     //router constructor
   constructor(private router: Router) { }
 }
