@@ -1,4 +1,6 @@
+//component import
 import { Component } from '@angular/core';
+//router import (nav)
 import { Router } from '@angular/router';
 
 @Component ({
@@ -12,12 +14,14 @@ export class LoginComponent {
         //router constructor
         constructor(private router: Router) { }
         
-        //example variables for login credentials
-        userid: string;
+        //tester variables for login credentials
+        userId: string;
         password: string;
 
+        //if user id and password match - user directed to dashboard component
+        //dummy userid and password before adding credentials into login for database
         goHome() : void {
-            if(this.userid == 'admin' && this.password == '123'){
+            if(this.userId == 'admin' && this.password == 'password'){
                 this.router.navigate(["dashboard"]);
             }
             else {

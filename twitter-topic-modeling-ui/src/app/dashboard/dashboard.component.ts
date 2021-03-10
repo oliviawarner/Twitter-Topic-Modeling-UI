@@ -10,5 +10,4 @@ import { Router } from '@angular/router';
 export class DashboardComponent {   
   //router constructor
   constructor(private router: Router) { }
-        
 }
