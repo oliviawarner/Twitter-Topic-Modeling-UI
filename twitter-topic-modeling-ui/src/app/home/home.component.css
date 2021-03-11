@@ -4,14 +4,16 @@ h1 {
     text-align:center;
 }
 
-.nav-masthead #home-link {
+.nav-masthead #home-link{
     font-weight: 500;
     color: rgba(101,119,134);
     padding:1rem;
+    text-decoration: none;
 }  
-#home-link:hover, #home-link:focus{
-    border-bottom-color: rgba(101,119,134);
+.nav-masthead #home-link:hover {
+    color:rgba(29,161,242);
 }
+
 
 /*Heading and Btn container*/
 .container {

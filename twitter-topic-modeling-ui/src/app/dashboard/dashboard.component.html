@@ -1,0 +1,55 @@
+<!--Dashboard Component-->
+<!--Contains topic modeling visuals-->
+
+<!--Navigation header-->
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow" id="dash-nav">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"> <fa-icon [icon]="twitterIcon" id="twitterIcon"></fa-icon></a>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" href="#">Sign out</a>
+      </li>
+    </ul>
+</header>
+  
+  <!--Side nav to search users and see all reports-->
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+                <a routerLink="/dashboard">Search</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/reports">Reports</a>
+            </li>
+          </ul>
+  
+          <!--Shows recently saved topic modeling reports-->
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Saved reports</span>
+            <a class="link-secondary" href="#" aria-label="Add a new report">
+              <span data-feather="plus-circle"></span>
+            </a>
+          </h6>
+        </div>
+      </nav>
+  
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Dashboard</h1>
+          <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+              <span data-feather="calendar"></span>
+              This week
+            </button>
+          </div>
+        </div>
+        <canvas class="my-4 w-100" id="topic-model" width="900" height="380" style="background-color: light;"></canvas>
+      </main>
+    </div>
+  </div>
