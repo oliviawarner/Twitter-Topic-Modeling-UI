@@ -50,7 +50,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
         component: DashboardComponent
       },
       {
-        path: 'home',
+        path: '',
         component: HomeComponent
       }
     ]),

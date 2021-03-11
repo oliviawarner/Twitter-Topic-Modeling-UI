@@ -4,6 +4,11 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 //twitter icon import
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+//bar chart icon import
+import {faChartBar} from '@fortawesome/free-solid-svg-icons';
+//reports icon import
+import {faFileAlt} from '@fortawesome/free-solid-svg-icons';
+
 
 @Component ({
     selector: 'dashboard',
@@ -12,8 +17,11 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 })
 
 export class DashboardComponent {   
-  //twitter icon
+  //dashboard icon def
   twitterIcon = faTwitter;
+  barchartIcon=faChartBar;
+  reportsIcon=faFileAlt;
+
   //router constructor
   constructor(private router: Router) { }
 }
