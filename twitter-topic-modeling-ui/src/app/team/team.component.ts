@@ -2,6 +2,8 @@
 import { Component } from '@angular/core';
 //router import (nav)
 import { Router } from '@angular/router';
+//user icon import
+import { faUser } from '@fortawesome/free-solid-svg-icons';;
 
 @Component ({
     selector: 'app-team',
@@ -12,4 +14,7 @@ import { Router } from '@angular/router';
 export class TeamComponent {
     //router constructor
     constructor(private router: Router) { }
+
+    //user icon
+    userIcon = faUser;
 }
