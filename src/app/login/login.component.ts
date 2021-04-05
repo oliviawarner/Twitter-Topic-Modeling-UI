@@ -2,6 +2,12 @@
 import { Component } from '@angular/core';
 //router import (nav)
 import { Router } from '@angular/router';
+import {HttpParams} from '@angular/common/http'
+
+//servie class needed to hit api endpoints
+import {ServicesAPI} from '../services/api.service';
+import { fromEventPattern } from 'rxjs';
+import { first } from 'rxjs/operators';
 
 @Component ({
     selector: 'app-login',
@@ -11,21 +17,34 @@ import { Router } from '@angular/router';
 
 export class LoginComponent {
 
-        //router constructor
-        constructor(private router: Router) { }
-
         //tester variables for login credentials
-        userId: string;
-        password: string;
+        public userId: string;
+        public password: string;
+
+
+        //router constructor
+        constructor(private router: Router, private api: ServicesAPI) {
+
+         }
+
 
         //if user id and password match - user directed to dashboard component
         //dummy userid and password before adding credentials into login for database
         goHome() : void {
-            if(this.userId == 'admin' && this.password == 'password'){
-                this.router.navigate(["dashboard"]);
-            }
-            else {
-                alert("invalid credentials");
-            }
+            this.login();
+        }
+
+        //this method is called by goHome to reguesst a loging attempt it then calls the api servie to make a request to the api
+        login() {
+
+          this.api.login(this.userId,this.password)
+            .pipe(first())
+            .subscribe(isLoggedIn => {
+              if(!isLoggedIn) return;
+
+              this.router.navigate(["dashboard"]);
+            })
+
+
         }
 }

@@ -11,7 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import {ServicesAPI} from './services/api.service'
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ReportsComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
@@ -54,10 +56,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
         component: HomeComponent
       }
     ]),
-    
+
 
   ],
-  providers: [],
+  providers: [ServicesAPI],
   bootstrap: [AppComponent]
 })
 export class AppModule {
