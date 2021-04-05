@@ -13,7 +13,7 @@ export class LoginComponent {
 
         //router constructor
         constructor(private router: Router) { }
-        
+
         //tester variables for login credentials
         userId: string;
         password: string;
