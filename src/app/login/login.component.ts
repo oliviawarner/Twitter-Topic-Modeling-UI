@@ -39,8 +39,8 @@ export class LoginComponent {
 
           this.api.login(this.userId,this.password)
             .pipe(first())
-            .subscribe(isLoggedIn => {
-              if(!isLoggedIn) return;
+            .subscribe(user => {
+              if(user === null) return;
 
               this.router.navigate(["dashboard"]);
             })

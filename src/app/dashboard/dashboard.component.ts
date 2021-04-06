@@ -17,6 +17,8 @@ import { first } from 'rxjs/operators';
 
 
 
+
+
 @Component ({
     selector: 'dashboard',
     templateUrl: './dashboard.component.html',
@@ -28,6 +30,8 @@ export class DashboardComponent {
   twitterIcon = faTwitter;
   barchartIcon=faChartBar;
   reportsIcon=faFileAlt;
+
+  ifValidUser: boolean;
 
   public twitterUser: TwitterUser;
 

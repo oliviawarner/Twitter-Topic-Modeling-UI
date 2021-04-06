@@ -14,6 +14,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {ServicesAPI} from './services/api.service'
 import {HttpClientModule} from '@angular/common/http';
 
+//angular material imports
+import { MatCardModule } from '@angular/material/card';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +28,7 @@ import {HttpClientModule} from '@angular/common/http';
     ReportsComponent
   ],
   imports: [
+    MatCardModule,
     HttpClientModule,
     BrowserModule,
     FormsModule,
