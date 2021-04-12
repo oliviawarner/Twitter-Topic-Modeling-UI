@@ -1,10 +1,14 @@
 <div class="jumbotron jumbotron-fluid">
+  <nav class="nav nav-masthead">
+    <fa-icon [icon]="backIcon" id="backIcon"></fa-icon><a routerLink="/dashboard">Back to Dashboard</a>
+  </nav>
     <div class="container">
       <h1 class="display-4">Reports</h1>
       <p class="lead"></p>
     </div>
-  </div>
-  <div class="reportItem">
-    <mat-card>ReportName: xavierJulius99
-      <br> Date:4/5/2021</mat-card>
-  </div>
+</div>
+
+<div class="reportItem" *ngFor="let report of (reportList | async)">
+  <mat-card>Report:{{report.reportName}} Report ID:{{report.id}} <br>Created at: {{report.createdAt | date:'medium'}}
+  </mat-card>
+</div>

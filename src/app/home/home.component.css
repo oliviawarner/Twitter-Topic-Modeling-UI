@@ -9,7 +9,7 @@ h1 {
     color: rgba(101,119,134);
     padding:1rem;
     text-decoration: none;
-}  
+}
 .nav-masthead #home-link:hover {
     color:rgba(29,161,242);
 }
@@ -20,8 +20,7 @@ h1 {
     width:100%;
     max-width:500px;
     text-align:center;
-    /*centers it on page*/
-    padding: 130px 0;
+    padding: 350px 0;
 }
 
 #twitterIcon {

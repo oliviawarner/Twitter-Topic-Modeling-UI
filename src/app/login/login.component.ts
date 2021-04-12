@@ -35,16 +35,19 @@ export class LoginComponent {
         }
 
         //this method is called by goHome to reguesst a loging attempt it then calls the api servie to make a request to the api
+        //seperated because the goHome fuction was already hooked up to the html was just easier to do it this way for now
         login() {
 
           this.api.login(this.userId,this.password)
             .pipe(first())
             .subscribe(user => {
-              if(user === null) return;
+              if(user === null)
+              {
+              window.alert('Invalid User! Please Enter Correct Username and Password...');
+              return;
+              }
 
               this.router.navigate(["dashboard"]);
             })
-
-
         }
 }

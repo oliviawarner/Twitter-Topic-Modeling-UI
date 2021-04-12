@@ -12,10 +12,11 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {ServicesAPI} from './services/api.service'
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 //angular material imports
 import { MatCardModule } from '@angular/material/card';
+import { AuthIntercepter } from './services/auth.intercepter';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,7 @@ import { MatCardModule } from '@angular/material/card';
 
 
   ],
-  providers: [ServicesAPI],
+  providers: [ServicesAPI,{provide: HTTP_INTERCEPTORS,useClass: AuthIntercepter,multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

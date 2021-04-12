@@ -34,19 +34,34 @@ export class DashboardComponent {
   ifValidUser: boolean;
 
   public twitterUser: TwitterUser;
+  public twitterUsername: string;
 
   //router constructor
   constructor(private router: Router,private api: ServicesAPI) { }
 
-
-  public searchTwiterUser(twitterUsername: string)
+  //calls the api endpoint that searches for the user and returns it if it exists and should give alert if it does not
+  public searchTwitterUser(twitterUsername: string)
   {
     this.api.twitterUserSearch(twitterUsername)
     .pipe(first())
     .subscribe(TwitterUser => {
+
+      if(TwitterUser === null)
+      {
+        alert("Twitter User does not exist");
+      }
+
       TwitterUser = this.twitterUser;
 
     })
+
+
+  }
+
+  //generate Report
+  public generateReport()
+  {
+    
   }
 
 }

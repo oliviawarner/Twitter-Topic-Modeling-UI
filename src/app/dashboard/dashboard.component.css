@@ -3,6 +3,7 @@
     color: rgba(101,119,134);
     padding:10px;
     text-decoration: none;
+    font-size: 60px;
 }
 
 #searchLink:hover{

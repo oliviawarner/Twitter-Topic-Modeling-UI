@@ -2,17 +2,24 @@
 <!--Contains topic modeling visuals-->
 <!--Resource: Bootstrap Dashboard Example Revised-->
 
-<!--Navigation header-->
+<!--Navigation Header-->
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow" id="dash-nav">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"> <fa-icon [icon]="twitterIcon" id="twitterIcon"></fa-icon></a>
-    <input class="form-control form-control-dark w-100" type="text" placeholder="Search User">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"> <fa-icon [icon]="twitterIcon" id="twitterIcon"></fa-icon> Twitter Topic Modeling System</a>
+
+    <!--Search twitter user name bar-->
+    <input class="form-control form-control-dark w-50" type="text" [(ngModel)]="twitterUsername" placeholder="Enter Twitter Username">
+
     <ul class="navbar-nav px-3">
-      <li class="nav-item text-nowrap">
-        <a class="nav-link" href="#">Sign out</a>
+      <li class="nav-item">
+        <!--Searches twitter user name from input class-->
+        <a class="btn btn-primary" (click)="searchTwitterUser(twitterUsername)">Create Report</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sign Out</a>
       </li>
     </ul>
 </header>
-  
+
   <!--Side nav to search users and see all reports-->
   <div class="container-fluid">
     <div class="row">
@@ -22,29 +29,31 @@
             <li class="nav-item">
               <fa-icon [icon]="barchartIcon" id="barchartIcon"></fa-icon> <a routerLink="/dashboard" id="searchLink">Search</a>
             </li>
+
             <li class="nav-item">
               <fa-icon [icon]="reportsIcon" id="reportsIcon"></fa-icon> <a routerLink="/reports" id="reportsLink">Reports</a>
             </li>
           </ul>
-  
-          <!--Shows recently saved topic modeling reports-->
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Flagged Reports</span>
-          </h6>
+
+
         </div>
       </nav>
-  
+
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
           <h1>Dashboard</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2" id="dashBtns">
               <button type="button" class="btn btn-sm btn-outline-success">Export CSV</button>
-              <button type="button" class="btn btn-sm btn-outline-danger">Flag Report</button>
             </div>
           </div>
         </div>
-        <canvas class="my-4 w-100" id="topic-model" width="900" height="380" style="background-color: lightskyblue;"></canvas>
+
+        <!--This the report section of the dashbaord -->
+        <div>
+          <canvas class="my-4 w-100" id="topic-model" width="900" height="380" style="background-color: lightskyblue;"></canvas>
+        </div>
+
       </main>
     </div>
   </div>

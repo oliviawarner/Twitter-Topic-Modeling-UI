@@ -18,6 +18,54 @@ export interface User {
 
 }
 
+export interface Report {
+
+  id: number
+
+  User: User
+
+  malFlag: boolean
+
+  ReportName: String
+
+  CreatedAt: Date
+
+  TwitterUser: TwitterUser
+
+  topics: Topics[]
+
+  ReportTweets: ReportTweet[]
+
+}
+
+export interface ReportTweet
+{
+  id: number
+
+  report: Report
+
+  tweet: Tweet
+
+  flag: boolean
+}
+
+export interface Tweet
+{
+  id: number
+  externalID: number
+  text: string
+  twitterUser: TwitterUser
+}
+
+export interface Topics
+{
+  topic: string
+  count: number
+}
+
+
+
+
 
 
 @Injectable({
@@ -35,6 +83,7 @@ export interface User {
   //constructor is blank but needed to create instances of this class
   constructor(private http: HttpClient) {
 
+    //this creates a header on the dataflow so that the userID of the user logged into the system will be able to be accessed after they log in
     this.httpOpt =  {
 
       headers: new HttpHeaders({
@@ -51,26 +100,36 @@ export interface User {
       .pipe(
         tap(user => {
           if(user === null) return;
-
-          this.httpOpt.headers.set("user-id",user.id.toString());
+          sessionStorage.setItem("user-id",user.id.toString());
         })
       );
 
   }
 
+
+  //accesses API enpoing to verify the username that has been entered is either in the database or an actual twitterUser
   public twitterUserSearch(twitterUsername: string)
   {
-    let params = new HttpParams().set("twitterUsername",twitterUsername);
-    return this.http.get<TwitterUser>('http://localhost:5000/TwitterUsers/', {params});
+
+    let TwitUser = this.http.get<TwitterUser>(`http://localhost:5000/TwitterUsers/${twitterUsername}`);
+
+    return TwitUser;
   }
 
+  //one the twitter user is verified this will call the api to generate a report for that user with the data and time currently
   public generateReport()
   {
 
   }
 
-  public getReport()
+
+
+
+  //gathers all the reports that the user that is logged in has generated on any Twitter user they selected
+  public getReportList()
   {
+    //still needs the api endpoint
+    return this.http.get<Report[]>("http://localhost:5000/Report/getReportList");
 
   }
 
