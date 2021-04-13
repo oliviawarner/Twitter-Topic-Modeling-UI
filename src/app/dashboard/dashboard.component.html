@@ -3,57 +3,43 @@
 <!--Resource: Bootstrap Dashboard Example Revised-->
 
 <!--Navigation Header-->
-<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow" id="dash-nav">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"> <fa-icon [icon]="twitterIcon" id="twitterIcon"></fa-icon> Twitter Topic Modeling System</a>
-
+<nav class="navbar flex-md-nowrap p-0 shadow" id="dash-nav">
+    <nav class="navbar-brand" id="dash-brand"> <fa-icon [icon]="twitterIcon" id="twitterIcon"></fa-icon> Twitter Topic Modeling System</nav>
     <!--Search twitter user name bar-->
-    <input class="form-control form-control-dark w-50" type="text" [(ngModel)]="twitterUsername" placeholder="Enter Twitter Username">
+    <div class="input-group">
+      <input class="form-control" type="text" [(ngModel)]="twitterUsername" placeholder="Search Twitter Username..." id="userInput">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="button" (click)="searchTwitterUser(twitterUsername)"><fa-icon [icon]="searchIcon" id="searchIcon"></fa-icon></button>
+      </div>
 
-    <ul class="navbar-nav px-3">
-      <li class="nav-item">
-        <!--Searches twitter user name from input class-->
-        <a class="btn btn-primary" (click)="searchTwitterUser(twitterUsername)">Create Report</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Sign Out</a>
-      </li>
-    </ul>
-</header>
+      <ul class="nav navbar-right" id="sign-out"> 
+        <li class="nav-item text-nowrap">
+        <a [routerLink] = "['']" id="signoutLink"><button type="button" class="btn btn-sm btn-secondary">Sign Out</button></a>
+        </li>
+      </ul>
 
-  <!--Side nav to search users and see all reports-->
-  <div class="container-fluid">
-    <div class="row">
-      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-        <div class="position-sticky pt-3">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <fa-icon [icon]="barchartIcon" id="barchartIcon"></fa-icon> <a routerLink="/dashboard" id="searchLink">Search</a>
-            </li>
-
-            <li class="nav-item">
-              <fa-icon [icon]="reportsIcon" id="reportsIcon"></fa-icon> <a routerLink="/reports" id="reportsLink">Reports</a>
-            </li>
-          </ul>
-
-
-        </div>
-      </nav>
-
-      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1>Dashboard</h1>
-          <div class="btn-toolbar mb-2 mb-md-0">
-            <div class="btn-group me-2" id="dashBtns">
-              <button type="button" class="btn btn-sm btn-outline-success">Export CSV</button>
-            </div>
-          </div>
-        </div>
-
-        <!--This the report section of the dashbaord -->
-        <div>
-          <canvas class="my-4 w-100" id="topic-model" width="900" height="380" style="background-color: lightskyblue;"></canvas>
-        </div>
-
-      </main>
     </div>
-  </div>
+  </nav>
+
+        <div class="d-flex justify-content-between align-items-center" id="dashboard">
+          <h1 id="dashboard-heading">Dashboard</h1>
+            <div class="btn-group me-2" id="dashBtns">
+              <a [routerLink] = "['/reports']" id="reportsLink"><button type="button" class="btn btn-sm btn-outline-primary"><fa-icon [icon]="reportsIcon" id="reportsIcon"></fa-icon> View Reports</button></a>
+              <a (click)="exportCSV()" id="reportsLink"><button type="button" class="btn btn-sm btn-outline-success"><fa-icon [icon]="csvIcon" id="csvIcon"></fa-icon> Export CSV</button></a>
+            </div>
+        </div>
+
+        <hr>
+
+        <!--Topic Modeling Visuals-->
+        <div class="visuals-container">
+          
+        </div>
+
+
+
+ 
+
+      
+
+

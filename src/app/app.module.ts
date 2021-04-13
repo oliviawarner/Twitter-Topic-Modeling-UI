@@ -11,8 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {ServicesAPI} from './services/api.service'
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { ServicesAPI } from './services/api.service'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 //angular material imports
 import { MatCardModule } from '@angular/material/card';

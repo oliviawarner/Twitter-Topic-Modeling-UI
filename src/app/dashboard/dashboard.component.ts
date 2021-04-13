@@ -4,19 +4,14 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 //twitter icon import
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
-//bar chart icon import
-import {faChartBar} from '@fortawesome/free-solid-svg-icons';
+//download icon import
+import {faDownload, faSearch} from '@fortawesome/free-solid-svg-icons';
 //reports icon import
 import {faFileAlt} from '@fortawesome/free-solid-svg-icons';
 
 //servie class needed to hit api endpoints
 import {ServicesAPI, TwitterUser} from '../services/api.service';
 import { first } from 'rxjs/operators';
-
-
-
-
-
 
 
 @Component ({
@@ -26,10 +21,14 @@ import { first } from 'rxjs/operators';
 })
 
 export class DashboardComponent {
-  //dashboard icon def
+  //twitter icon def
   twitterIcon = faTwitter;
-  barchartIcon=faChartBar;
+  //report icon def
   reportsIcon=faFileAlt;
+  //download icon def
+  csvIcon=faDownload;
+  //search icon def
+  searchIcon=faSearch;
 
   ifValidUser: boolean;
 
@@ -38,6 +37,10 @@ export class DashboardComponent {
 
   //router constructor
   constructor(private router: Router,private api: ServicesAPI) { }
+
+  exportCSV() : void {
+    window.alert("Exporting Report to CSV...");
+  }
 
   //calls the api endpoint that searches for the user and returns it if it exists and should give alert if it does not
   public searchTwitterUser(twitterUsername: string)
@@ -48,13 +51,14 @@ export class DashboardComponent {
 
       if(TwitterUser === null)
       {
-        alert("Twitter User does not exist");
+        alert("Twitter User Does Not Exist!");
       }
 
       TwitterUser = this.twitterUser;
 
     })
 
+    
 
   }
 

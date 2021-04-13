@@ -1,40 +1,50 @@
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="mb-auto">
-    <div>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
+<header class="mb-auto">
+    <nav class="nav nav-masthead justify-content-center float-md-end">
         <a routerLink="" id="home-link">Home</a>
         <a routerLink="/features" id="home-link">Features</a>
         <a routerLink="/team" id="home-link">Team</a>
-      </nav>
-    </div>
-  </header>
+    </nav>
+</header>
 
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4">Our Team</h1>
-      <p class="lead"></p>
+      <h1 id="team-heading">Our Team</h1>
+      <br>
+      <p class="lead">
+        This topic modeling system was created by 3 graduating seniors studying
+        Computer Science at <a href="https://www.sru.edu" id="sruLink" target="_blank">Slippery Rock University of Pennsylvania</a> who are driven
+        and passionate about software engineering.
+      </p>
     </div>
   </div>
 
-<div class="container" style="text-align: center;">
+<div class="container" style="text-align: center;" id="team-cards">
   <div class="row">
-    <!--Xavier-->
+
+    <!--Xavier Card-->
     <div class="col-md">
       <fa-icon [icon]="userIcon" id="userIcon"></fa-icon>
       <h2>Xavier Julius</h2>
       <p class="lead">API and Database Engineer</p>
+      <fa-icon [icon]="githubIcon" id="githubIcon" (click)="xjuliusGithub()"></fa-icon>
     </div>
-    <!--Emily-->
+
+    <!--Emily Card-->
     <div class="col-md">
       <fa-icon [icon]="userIcon" id="userIcon"></fa-icon>
       <h2>Emily Grabb</h2>
       <p class="lead">Machine Learning Engineer</p>
+      <fa-icon [icon]="linkedinIcon" id="linkedinIcon" (click)="egrabbLinkedIn()"></fa-icon>
+      <fa-icon [icon]="githubIcon" id="githubIcon" (click)="egrabbGithub()"></fa-icon>
     </div>
-    <!--Olivia-->
+
+    <!--Olivia Card-->
     <div class="col-md">
       <fa-icon [icon]="userIcon" id="userIcon"></fa-icon>
       <h2>Olivia Warner</h2>
       <p class="lead">Front End Engineer</p>
+      <fa-icon [icon]="linkedinIcon" id="linkedinIcon" (click)="owarnerLinkedIn()"></fa-icon>
+      <fa-icon [icon]="githubIcon" id="githubIcon" (click)="owarnerGithub()"></fa-icon>
     </div>
+
   </div>
-</div>

@@ -4,3 +4,7 @@
   width: 100vw;
   justify-content: center;
 }
+
+#reports-heading {
+  font-size: 50px;
+}

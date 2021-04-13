@@ -4,6 +4,10 @@ h1 {
     text-align:center;
 }
 
+.nav {
+    font-size: 20px;
+}
+
 .nav-masthead #home-link{
     font-weight: 500;
     color: rgba(101,119,134);
@@ -15,12 +19,16 @@ h1 {
 }
 
 
-/*Heading and Btn container*/
+/*Heading and Btn container centered vertically and horizontally*/
 .container {
     width:100%;
-    max-width:500px;
-    text-align:center;
-    padding: 350px 0;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 #twitterIcon {
@@ -28,15 +36,19 @@ h1 {
     font-size: 80px;
 }
 
-
-/*Launch btn*/
+/*Launch btn that takes you to login screen*/
 #launch{
     border-radius: 100px;
     border:2px solid rgba(29,161,242);
-    font-size:20px;
+    font-size:25px;
 }
 
 #launch:hover{
     background-color:rgba(29,161,242);
     color:white;
+}
+
+#launch-txt {
+    font-size: 35px;
+    padding: 18px;
 }
