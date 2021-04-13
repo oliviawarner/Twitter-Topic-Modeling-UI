@@ -52,9 +52,9 @@ export class DashboardComponent {
 
       if(TwitterUser === null)
       {
-        alert("Twitter User does not exist");
-        return;
         alert("Twitter User Does Not Exist!");
+        return;
+
       }
 
       TwitterUser = this.twitterUser;
