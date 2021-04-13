@@ -1,3 +1,6 @@
+.nav {
+    font-size: 20px;
+}
 .nav-masthead #home-link{
     font-weight: 500;
     color: rgba(101,119,134);
@@ -8,6 +11,42 @@
     color:rgba(29,161,242);
 }
 
+#team-heading {
+    font-size: 50px;
+}
+
+#team-cards {
+    padding-top: 50px;
+}
+
 #userIcon {
     font-size: 45px;
+}
+
+#sruLink {
+    color:black;
+}
+
+#sruLink:hover {
+    color: #2e6d56;
+    text-decoration: none;
+}
+
+#linkedinIcon {
+    font-size: 28px;
+}
+
+#linkedinIcon:hover {
+   cursor:pointer;
+   color:gray;
+}
+
+#githubIcon {
+    font-size: 28px;
+    padding: 7px;
+}
+
+#githubIcon:hover {
+    cursor:pointer;
+    color:gray;
 }

@@ -21,15 +21,12 @@ export class LoginComponent {
         public userId: string;
         public password: string;
 
-
         //router constructor
         constructor(private router: Router, private api: ServicesAPI) {
 
-         }
-
+        }
 
         //if user id and password match - user directed to dashboard component
-        //dummy userid and password before adding credentials into login for database
         goHome() : void {
             this.login();
         }
@@ -46,7 +43,6 @@ export class LoginComponent {
               window.alert('Invalid User! Please Enter Correct Username and Password...');
               return;
               }
-
               this.router.navigate(["dashboard"]);
             })
         }

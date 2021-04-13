@@ -3,7 +3,9 @@ import { Component } from '@angular/core';
 //router import (nav)
 import { Router } from '@angular/router';
 //user icon import
-import { faUser } from '@fortawesome/free-solid-svg-icons';;
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import {faUser} from '@fortawesome/free-solid-svg-icons';
+
 
 @Component ({
     selector: 'app-team',
@@ -17,4 +19,36 @@ export class TeamComponent {
 
     //user icon
     userIcon = faUser;
+
+    //linkedin icon
+    linkedinIcon = faLinkedin;
+    
+    //github icon
+    githubIcon=faGithub;
+
+    //olivia warner linkedin navigation
+    owarnerLinkedIn() : void {
+        window.location.href = "https://www.linkedin.com/in/olivia--warner/"
+    }
+
+    //olivia warner github navigation
+    owarnerGithub() : void {
+        window.location.href = "https://github.com/oliviawarner"
+    }
+
+    //emily grabb linkedin navigation
+    egrabbLinkedIn() : void {
+        window.location.href = "https://www.linkedin.com/in/emilygrabb/"
+    }
+
+    //emily grabb github navigation
+    egrabbGithub() : void {
+        window.location.href = "https://github.com/emilygrabb"
+    }
+
+    //xavier julius github navigation
+    xjuliusGithub() : void {
+        window.location.href = "https://github.com/xjj1002"
+    }
 }
+
