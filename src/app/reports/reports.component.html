@@ -12,7 +12,9 @@
     </div>
 </div>
 
-<div class="reportItem" *ngFor="let report of (reportList | async)">
-  <mat-card>Report:{{report.reportName}} Report ID:{{report.id}} <br>Created at: {{report.createdAt | date:'medium'}}
+<div class="container">
+<div class="reportItem" >
+  <mat-card *ngFor="let report of (reportList | async)" style="width: 100%;">Report:{{report.reportName}} Report ID:{{report.id}} <br>Created at: {{report.createdAt | date:'medium'}}
   </mat-card>
+</div>
 </div>

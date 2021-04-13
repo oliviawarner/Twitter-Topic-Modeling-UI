@@ -12,7 +12,7 @@
         <button class="btn btn-primary" type="button" (click)="searchTwitterUser(twitterUsername)"><fa-icon [icon]="searchIcon" id="searchIcon"></fa-icon></button>
       </div>
 
-      <ul class="nav navbar-right" id="sign-out"> 
+      <ul class="nav navbar-right" id="sign-out">
         <li class="nav-item text-nowrap">
         <a [routerLink] = "['']" id="signoutLink"><button type="button" class="btn btn-sm btn-secondary">Sign Out</button></a>
         </li>
@@ -32,14 +32,29 @@
         <hr>
 
         <!--Topic Modeling Visuals-->
-        <div class="visuals-container">
-          
-        </div>
+        <ng-container *ngIf="!isLoading; else loadingSpinner">
+          <div class="visuals-container" *ngIf="!!report">
+            <div class="header">ReportName: {{report.reportName}}
+            </div>
+              <div >
+                test left
+              </div>
+              <div >
+                test right
+              </div>
+          </div>
+        </ng-container>
+        <ng-template #loadingSpinner>
+          Loading.....
+        </ng-template>
 
 
 
- 
 
-      
+
+
+
+
+
 
 

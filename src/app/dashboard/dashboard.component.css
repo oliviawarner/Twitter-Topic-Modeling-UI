@@ -47,3 +47,20 @@ padding-right: 10px;
     font-size: 40px;
     font-weight: 700;
 }
+
+.visuals-container
+{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "header header"
+    "left right";
+
+}
+
+
+.header
+{
+  grid-area: header;
+}

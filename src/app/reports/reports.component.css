@@ -1,8 +1,10 @@
 .reportItem{
   display: flex;
-  align-items: center;
-  width: 100vw;
+  align-items: flex-start;
   justify-content: center;
+  row-gap: 1rem;
+  flex-direction:  column;
+  padding-bottom: 1rem;
 }
 
 #reports-heading {

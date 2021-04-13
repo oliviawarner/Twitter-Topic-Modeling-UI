@@ -1,5 +1,5 @@
 //import component
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 //router component
 import { Router } from '@angular/router';
 //twitter icon import
@@ -11,7 +11,8 @@ import {faFileAlt} from '@fortawesome/free-solid-svg-icons';
 
 //servie class needed to hit api endpoints
 import {Report, ServicesAPI, TwitterUser} from '../services/api.service';
-import { first } from 'rxjs/operators';
+import { first, takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 
 @Component ({
@@ -20,7 +21,7 @@ import { first } from 'rxjs/operators';
     styleUrls: ['./dashboard.component.css']
 })
 
-export class DashboardComponent {
+export class DashboardComponent implements OnDestroy {
   //twitter icon def
   twitterIcon = faTwitter;
   //report icon def
@@ -31,13 +32,20 @@ export class DashboardComponent {
   searchIcon=faSearch;
 
   ifValidUser: boolean;
+  public isLoading: boolean = false;
 
   public twitterUser: TwitterUser;
   public twitterUsername: string;
   public report: Report;
 
+
+  public destroyed: Subject<any> = new Subject();
+
   //router constructor
   constructor(private router: Router,private api: ServicesAPI) { }
+  ngOnDestroy(): void {
+    this.destroyed.next();
+  }
 
   exportCSV() : void {
     window.alert("Exporting Report to CSV...");
@@ -46,29 +54,49 @@ export class DashboardComponent {
   //calls the api endpoint that searches for the user and returns it if it exists and should give alert if it does not
   public searchTwitterUser(twitterUsername: string)
   {
+    this.isLoading = true;
+    this.resetReport();
     this.api.twitterUserSearch(twitterUsername)
-    .pipe(first())
+    .pipe(takeUntil(this.destroyed))
     .subscribe(TwitterUser => {
 
-      if(TwitterUser === null)
-      {
-        alert("Twitter User Does Not Exist!");
-        return;
+      this.twitterUser = TwitterUser;
+      this.generateReport(this.twitterUser);
 
-      }
-
-      TwitterUser = this.twitterUser;
-
+    },
+    error => {
+      this.isLoading = false;
+      alert("Twitter User Does Not Exist!");
     })
 
-    this.generateReport(this.twitterUser);
+
   }
 
   //generate Report
   public generateReport(twitterUser: TwitterUser)
   {
-    this.api.generateReport(twitterUser);
+    this.api.generateReport(twitterUser)
+      .pipe(takeUntil(this.destroyed))
+      .subscribe(genReport => {
+
+
+        this.report = genReport;
+
+        this.isLoading = false;
+      },
+      error => {
+        this.isLoading = false;
+        alert("Error loading report!");
+      });
   }
 
+
+  public resetReport()
+  {
+    this.twitterUser = null;
+    this.report = null;
+  }
 }
+
+
 
