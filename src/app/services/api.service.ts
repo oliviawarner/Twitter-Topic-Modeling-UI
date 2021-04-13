@@ -117,9 +117,11 @@ export interface Topics
   }
 
   //one the twitter user is verified this will call the api to generate a report for that user with the data and time currently
-  public generateReport()
+  public generateReport(twitterUser: TwitterUser)
   {
-
+    const count = 200;
+    const username = twitterUser.screenName;
+    let report = this.http.post<Report>('http://localhost:5000/Report/generateReport', { username, count });
   }
 
 

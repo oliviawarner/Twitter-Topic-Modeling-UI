@@ -10,7 +10,7 @@ import {faChartBar} from '@fortawesome/free-solid-svg-icons';
 import {faFileAlt} from '@fortawesome/free-solid-svg-icons';
 
 //servie class needed to hit api endpoints
-import {ServicesAPI, TwitterUser} from '../services/api.service';
+import {Report, ServicesAPI, TwitterUser} from '../services/api.service';
 import { first } from 'rxjs/operators';
 
 
@@ -35,6 +35,7 @@ export class DashboardComponent {
 
   public twitterUser: TwitterUser;
   public twitterUsername: string;
+  public report: Report;
 
   //router constructor
   constructor(private router: Router,private api: ServicesAPI) { }
@@ -49,19 +50,20 @@ export class DashboardComponent {
       if(TwitterUser === null)
       {
         alert("Twitter User does not exist");
+        return;
       }
 
       TwitterUser = this.twitterUser;
 
     })
 
-
+    this.generateReport(this.twitterUser);
   }
 
   //generate Report
-  public generateReport()
+  public generateReport(twitterUser: TwitterUser)
   {
-    
+    this.api.generateReport(twitterUser);
   }
 
 }
