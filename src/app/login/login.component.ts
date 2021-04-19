@@ -38,12 +38,10 @@ export class LoginComponent {
           this.api.login(this.userId,this.password)
             .pipe(first())
             .subscribe(user => {
-              if(user === null)
-              {
-              window.alert('Invalid User! Please Enter Correct Username and Password...');
-              return;
-              }
               this.router.navigate(["dashboard"]);
+            },
+            error => {
+              alert(" InValid username or password!");
             })
         }
 }

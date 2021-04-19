@@ -34,14 +34,41 @@
         <!--Topic Modeling Visuals-->
         <ng-container *ngIf="!isLoading; else loadingSpinner">
           <div class="visuals-container" *ngIf="!!report">
-            <div class="header">ReportName: {{report.reportName}}
+            <div class="report-header">
+              ReportName: {{report.reportName}}  Report ID: {{report.id}} <span class="malflag" *ngIf="report.malFlag">Malicious Conent</span>
             </div>
-              <div >
-                test left
+              <div>
+                <cdk-virtual-scroll-viewport itemSize="100" class="viewport">
+                <mat-card class="tweet" *cdkVirtualFor="let tweet of report.reportTweets">
+                  <mat-card-subtitle>{{tweet.createdAt | date:'medium'}}</mat-card-subtitle>
+                  {{tweet.text}}
+                </mat-card>
+              </cdk-virtual-scroll-viewport>
               </div>
-              <div >
-                test right
+              <div>
+                <div class="bar-warpper" >
+                  <canvas baseChart
+                      [datasets]="barChartData"
+                      [labels]="barChartLabels"
+                      [options]="barChartOptions"
+                      [legend]="barChartLegend"
+                      [chartType]="barChartType">
+                    </canvas>
+                </div>
+                <div class="line-wrapper">
+                  <canvas baseChart
+                  [datasets]="lineChartData"
+                  [labels]="lineChartLabels"
+                  [options]="lineChartOptions"
+                  [legend]="lineChartLegend"
+                  [chartType]="lineChartType"
+                  [plugins]="lineChartPlugins">
+                </canvas>
+                </div>
               </div>
+
+
+
           </div>
         </ng-container>
         <ng-template #loadingSpinner>

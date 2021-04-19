@@ -10,3 +10,11 @@
 #reports-heading {
   font-size: 50px;
 }
+
+.view-report
+{
+  background-color: #0984e3;
+  display: flex;
+
+}
+

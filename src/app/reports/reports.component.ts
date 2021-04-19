@@ -20,10 +20,14 @@ export class ReportsComponent implements OnInit{
 
   //router constructor
   constructor(private router: Router, private api: ServicesAPI) { }
+
+  //these items are done on intial load of the page
+  //the report list needs to be loaded so the data is there for each report to be displayed
   ngOnInit(): void {
 
   this.reportList = this.api.getReportList()
 
   }
+
 
 }

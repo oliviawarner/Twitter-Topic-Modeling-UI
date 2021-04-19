@@ -14,9 +14,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ServicesAPI } from './services/api.service'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-//angular material imports
+//angular material and authentication intercepter imports
 import { MatCardModule } from '@angular/material/card';
 import { AuthIntercepter } from './services/auth.intercepter';
+import {MatButtonModule} from '@angular/material/button';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+
+//import for ng2chats
+//https://github.com/valor-software/ng2-charts
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -30,6 +36,9 @@ import { AuthIntercepter } from './services/auth.intercepter';
   ],
   imports: [
     MatCardModule,
+    MatButtonModule,
+    ScrollingModule,
+    ChartsModule,
     HttpClientModule,
     BrowserModule,
     FormsModule,
@@ -53,6 +62,10 @@ import { AuthIntercepter } from './services/auth.intercepter';
         component: LoginComponent
       },
       {
+        path: 'dashboard/:reportId',
+        component: DashboardComponent
+      },
+      {
         path: 'dashboard',
         component: DashboardComponent
       },
@@ -64,6 +77,7 @@ import { AuthIntercepter } from './services/auth.intercepter';
 
 
   ],
+  //providers are needed to use the api service and the intercepter for applying the user-id to the http requests is done here
   providers: [ServicesAPI,{provide: HTTP_INTERCEPTORS,useClass: AuthIntercepter,multi: true}],
   bootstrap: [AppComponent]
 })

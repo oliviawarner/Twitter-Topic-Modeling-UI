@@ -14,7 +14,12 @@
 
 <div class="container">
 <div class="reportItem" >
-  <mat-card *ngFor="let report of (reportList | async)" style="width: 100%;">Report:{{report.reportName}} Report ID:{{report.id}} <br>Created at: {{report.createdAt | date:'medium'}}
+  <mat-card *ngFor="let report of (reportList | async)" style="width: 100%;">
+    <mat-card-title>{{report.id}} - {{report.reportName}}</mat-card-title>
+    <mat-card-subtitle>{{report.createdAt | date:'medium'}}</mat-card-subtitle>
+    <mat-card-actions>
+      <button class="view-report" mat-raised-button [routerLink]="['/dashboard/', report.id]">View</button>
+    </mat-card-actions>
   </mat-card>
 </div>
 </div>
