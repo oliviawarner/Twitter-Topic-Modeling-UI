@@ -1,3 +1,4 @@
+<!--Back to Dashboard Link-->
 <header class="mb-auto">
   <div>
     <nav class="nav nav-masthead justify-content-left float-md-end">
@@ -5,13 +6,17 @@
     </nav>
   </div>
 </header>
+
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
+    <!--Report Heading-->
     <h1 id="reports-heading">Reports</h1>
+    <!--Report copywriting-->
     <p class="lead">View a created report</p>
     </div>
 </div>
 
+<!--Report Cards-->
 <div class="reportItem" *ngFor="let report of (reportList | async)">
   <mat-card>Report:{{report.reportName}} Report ID:{{report.id}} <br>Created at: {{report.createdAt | date:'medium'}}
   </mat-card>

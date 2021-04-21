@@ -2,11 +2,12 @@
 import { Component } from '@angular/core';
 //router import (nav)
 import { Router } from '@angular/router';
+
 //user icon import
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import {faUser} from '@fortawesome/free-solid-svg-icons';
 
-
+//component file connections
 @Component ({
     selector: 'app-team',
     templateUrl: './team.component.html',

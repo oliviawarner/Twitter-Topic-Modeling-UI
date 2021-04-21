@@ -1,18 +1,23 @@
+/*Team Component Styles*/
+/*Color Palete Source: https://brandpalettes.com/twitter-colors/#:~:text=The%20Twitter%20colors%20consist%20of,extra%20light%20gray%20and%20white.*/
+
 .nav {
     font-size: 20px;
 }
 .nav-masthead #home-link{
     font-weight: 500;
-    color: rgba(101,119,134);
+    color: #657786;
     padding:1rem;
     text-decoration: none;
-}  
+}
+
 .nav-masthead #home-link:hover {
-    color:rgba(29,161,242);
+    color:#1DA1F2;
 }
 
 #team-heading {
     font-size: 50px;
+    font-weight: 500;
 }
 
 #team-cards {
@@ -38,7 +43,7 @@
 
 #linkedinIcon:hover {
    cursor:pointer;
-   color:gray;
+   color:#657786;
 }
 
 #githubIcon {
@@ -48,5 +53,5 @@
 
 #githubIcon:hover {
     cursor:pointer;
-    color:gray;
+    color:#657786;
 }

@@ -13,7 +13,7 @@ import {faFileAlt} from '@fortawesome/free-solid-svg-icons';
 import {Report, ServicesAPI, TwitterUser} from '../services/api.service';
 import { first } from 'rxjs/operators';
 
-
+//component file connections
 @Component ({
     selector: 'dashboard',
     templateUrl: './dashboard.component.html',
@@ -30,15 +30,20 @@ export class DashboardComponent {
   //search icon def
   searchIcon=faSearch;
 
+  //valid user 
   ifValidUser: boolean;
 
+  //twitter user
   public twitterUser: TwitterUser;
+  //twitter username
   public twitterUsername: string;
+  //report
   public report: Report;
 
-  //router constructor
+  //router and api constructor
   constructor(private router: Router,private api: ServicesAPI) { }
 
+  //test message for export csv button ~ added to future use of application
   exportCSV() : void {
     window.alert("Exporting Report to CSV...");
   }
@@ -50,6 +55,7 @@ export class DashboardComponent {
     .pipe(first())
     .subscribe(TwitterUser => {
 
+      //if the twitter user does not exist
       if(TwitterUser === null)
       {
         alert("Twitter User Does Not Exist!");
@@ -57,14 +63,16 @@ export class DashboardComponent {
 
       }
 
+      //grabs user if it exists
       TwitterUser = this.twitterUser;
 
     })
 
+    //generates report based on searched twitter user
     this.generateReport(this.twitterUser);
   }
 
-  //generate Report
+  //generate twitter user report
   public generateReport(twitterUser: TwitterUser)
   {
     this.api.generateReport(twitterUser);
