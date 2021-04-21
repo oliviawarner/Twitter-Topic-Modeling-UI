@@ -37,6 +37,7 @@
             <div class="report-header">
               ReportName: {{report.reportName}}  Report ID: {{report.id}} <span class="malflag" *ngIf="report.malFlag">Malicious Conent</span>
             </div>
+            <!--left hand side where tweets are displayed-->
               <div>
                 <cdk-virtual-scroll-viewport itemSize="100" class="viewport">
                 <mat-card class="tweet" *cdkVirtualFor="let tweet of report.reportTweets">
@@ -45,6 +46,7 @@
                 </mat-card>
               </cdk-virtual-scroll-viewport>
               </div>
+              <!--right hand side where visuals are displayed-->
               <div>
                 <div class="bar-warpper" >
                   <canvas baseChart

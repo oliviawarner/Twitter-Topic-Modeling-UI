@@ -125,6 +125,8 @@ export interface Topics
 
   }
 
+  //method for getting singular report base on report id
+  //used withing the oninit of dahsboard to load a report from report list screen
   public getReport(reportId: string)
   {
     return this.http.get<Report>(`http://localhost:5000/Report/getReport/${reportId}`);
