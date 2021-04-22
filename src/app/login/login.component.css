@@ -1,8 +1,9 @@
 /*Login Component Styles*/
-/*Color Palete source: https://brandpalettes.com/twitter-colors/#:~:text=The%20Twitter%20colors%20consist%20of,extra%20light%20gray%20and%20white.*/
+/*Color Palete Source: https://brandpalettes.com/twitter-colors/#:~:text=The%20Twitter%20colors%20consist%20of,extra%20light%20gray%20and%20white.*/
 
-h1 {
+#signin-heading {
     text-align:center;
+    font-size: 40px;
 }
 
 .container {
@@ -24,5 +25,5 @@ h1 {
 /*login button styles*/
 #login-btn {
     border-radius: 100px;
-    border:2px solid rgba(101,119,134);
+    border:2px solid #657786;
 }

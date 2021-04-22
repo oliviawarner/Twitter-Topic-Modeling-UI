@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 //twitter icon import
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
-
+//component file connections
 @Component ({
     selector: 'home',
     templateUrl: './home.component.html',

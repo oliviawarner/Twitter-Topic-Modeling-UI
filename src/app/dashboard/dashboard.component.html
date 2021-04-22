@@ -1,28 +1,36 @@
 <!--Dashboard Component-->
-<!--Contains topic modeling visuals-->
+<!--Contains Topic Modeling Visuals-->
+
 <!--Resource: Bootstrap Dashboard Example Revised-->
 
 <!--Navigation Header-->
 <nav class="navbar flex-md-nowrap p-0 shadow" id="dash-nav">
+    <!--Twitter Icon and Application Name-->
     <nav class="navbar-brand" id="dash-brand"> <fa-icon [icon]="twitterIcon" id="twitterIcon"></fa-icon> Twitter Topic Modeling System</nav>
-    <!--Search twitter user name bar-->
+
+    <!--Search Twitter Username Bar-->
     <div class="input-group">
       <input class="form-control" type="text" [(ngModel)]="twitterUsername" placeholder="Search Twitter Username..." id="userInput">
+      <!--Search User Button-->
       <div class="input-group-append">
-        <button class="btn btn-primary" type="button" (click)="searchTwitterUser(twitterUsername)"><fa-icon [icon]="searchIcon" id="searchIcon"></fa-icon></button>
+        <button class="btn" type="button" id="searchUserBtn" (click)="searchTwitterUser(twitterUsername)"><fa-icon [icon]="searchIcon" id="searchIcon"></fa-icon></button>
       </div>
 
+      <!--Sign Out Button-->
       <ul class="nav navbar-right" id="sign-out">
         <li class="nav-item text-nowrap">
-        <a [routerLink] = "['']" id="signoutLink"><button type="button" class="btn btn-sm btn-secondary">Sign Out</button></a>
+        <a [routerLink] = "['']" id="signoutLink"><button type="button" class="btn btn-sm" id="signoutBtn">Sign Out</button></a>
         </li>
       </ul>
 
     </div>
   </nav>
 
+        <!--Dashboard Heading Class-->
         <div class="d-flex justify-content-between align-items-center" id="dashboard">
           <h1 id="dashboard-heading">Dashboard</h1>
+
+            <!--Report and CSV Button Group-->
             <div class="btn-group me-2" id="dashBtns">
               <a [routerLink] = "['/reports']" id="reportsLink"><button type="button" class="btn btn-sm btn-outline-primary"><fa-icon [icon]="reportsIcon" id="reportsIcon"></fa-icon> View Reports</button></a>
               <a (click)="exportCSV()" id="reportsLink"><button type="button" class="btn btn-sm btn-outline-success"><fa-icon [icon]="csvIcon" id="csvIcon"></fa-icon> Export CSV</button></a>

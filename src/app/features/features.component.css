@@ -2,6 +2,7 @@
     font-size: 20px;
 }
 
+
 .nav-masthead #home-link{
     font-weight: 500;
     color: rgba(101,119,134);
@@ -15,4 +16,5 @@
 
 #features-heading {
     font-size: 50px;
+    font-weight:500;
 }

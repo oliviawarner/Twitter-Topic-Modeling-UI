@@ -1,3 +1,6 @@
+/*Dashboard Component Styles*/
+/*Color Palete Source: https://brandpalettes.com/twitter-colors/#:~:text=The%20Twitter%20colors%20consist%20of,extra%20light%20gray%20and%20white.*/
+
 html {
     width:100%;
 }
@@ -11,7 +14,7 @@ html {
 
 
 #reportsLink:hover{
-    color: rgba(29,161,242);
+    color: #1DA1F2;
 }
 
 #userInput {
@@ -35,12 +38,31 @@ padding-right: 10px;
 }
 
 #dash-brand {
-    color: rgba(29,161,242);
+    color: #1DA1F2;
 }
 
 #sign-out {
     padding-top: 4px;
     padding-left: 40px;
+}
+
+#signoutLink {
+    padding:10px;
+    background-color: #14171A;
+    border-radius: 6px;
+}
+
+#signoutBtn {
+    color:white;
+}
+
+#signoutBtn:hover {
+    color:#AAB8C2;
+}
+
+#searchUserBtn {
+    background-color: #1DA1F2;
+    color:white;
 }
 
 #dashboard-heading {

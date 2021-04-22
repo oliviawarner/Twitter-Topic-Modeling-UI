@@ -1,14 +1,20 @@
 //component import
 import { Component } from '@angular/core';
+
 //router import (nav)
 import { Router } from '@angular/router';
+//http import
 import {HttpParams} from '@angular/common/http'
 
-//servie class needed to hit api endpoints
+//service class needed to hit api endpoints
 import {ServicesAPI} from '../services/api.service';
+
+//event pattern import
 import { fromEventPattern } from 'rxjs';
+//first operation import
 import { first } from 'rxjs/operators';
 
+//component file connections 
 @Component ({
     selector: 'app-login',
     templateUrl: './login.component.html',
@@ -17,21 +23,20 @@ import { first } from 'rxjs/operators';
 
 export class LoginComponent {
 
-        //tester variables for login credentials
+        //variables for login credentials
         public userId: string;
         public password: string;
 
-        //router constructor
+        //routerand api  constructor
         constructor(private router: Router, private api: ServicesAPI) {
-
         }
-
+        
         //if user id and password match - user directed to dashboard component
         goHome() : void {
             this.login();
         }
 
-        //this method is called by goHome to reguesst a loging attempt it then calls the api servie to make a request to the api
+        //this method is called by goHome to reguest a loging attempt it then calls the api servie to make a request to the api
         //seperated because the goHome fuction was already hooked up to the html was just easier to do it this way for now
         login() {
 

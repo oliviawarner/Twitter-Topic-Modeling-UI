@@ -25,7 +25,7 @@ import { Label, Color } from 'ng2-charts';
 //https://www.positronx.io/angular-chart-js-tutorial-with-ng2-charts-examples/
 //Link above is for code example of line and bar chat
 
-
+//component file connections
 @Component ({
     selector: 'dashboard',
     templateUrl: './dashboard.component.html',
@@ -43,12 +43,16 @@ export class DashboardComponent implements OnDestroy, OnInit {
   searchIcon=faSearch;
 
   //booleans for validUser and for the loading icon when report is being generated
+  //valid user
   ifValidUser: boolean;
   public isLoading: boolean = false;
 
   //data froms needed to accept API responses
+  //twitter user
   public twitterUser: TwitterUser;
+  //twitter username
   public twitterUsername: string;
+  //report
   public report: Report;
 
   //createing data for line and bar chart
@@ -161,6 +165,8 @@ export class DashboardComponent implements OnDestroy, OnInit {
   //generate Report
   //calls the api service passing the twitter user so that the report generation can start
   //isloading will allow a loading incon to be displayed while the procces takes place
+    //generates report based on searched twitter user
+  //generate twitter user report
   public generateReport(twitterUser: TwitterUser)
   {
     this.api.generateReport(twitterUser)
