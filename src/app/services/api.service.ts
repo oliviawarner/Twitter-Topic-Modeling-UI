@@ -113,7 +113,7 @@ export interface Topics
   {
     return this.http.post<Report>('http://localhost:5000/Report/generateReport', {
       username: twitterUser.screenName,
-      count: 200,
+      count: 100,
     });
   }
 
