@@ -2,6 +2,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 //router component
 import { Router, ActivatedRoute } from '@angular/router';
+
+//Icons: https://www.npmjs.com/package/@fortawesome/angular-fontawesome
 //twitter icon import
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 //download icon import

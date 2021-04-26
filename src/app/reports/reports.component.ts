@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-//https://www.npmjs.com/package/@fortawesome/free-solid-svg-icons
+//Icons: https://www.npmjs.com/package/@fortawesome/angular-fontawesome
+//left arrow import
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 import { Observable } from 'rxjs';

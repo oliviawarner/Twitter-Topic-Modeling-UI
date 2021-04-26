@@ -1,20 +1,89 @@
+/*Features Component Styling*/
+
 .nav {
     font-size: 20px;
 }
 
-
 .nav-masthead #home-link{
     font-weight: 500;
-    color: rgba(101,119,134);
+    color: #657786;
     padding:1rem;
     text-decoration: none;
 }  
 
 .nav-masthead #home-link:hover {
-    color:rgba(29,161,242);
+    color:#1DA1F2;
+}
+
+#pill {
+    background-color: #1DA1F2;
+    font-size:50px;
+    color:white;
 }
 
 #features-heading {
     font-size: 50px;
     font-weight:500;
+}
+
+.row {
+    text-align: center;
+    width:100%;
+}
+
+.tweet-feature {
+    color:black;
+    text-align:center;
+}
+
+#tweet-list {
+    height:490px;
+    max-width:600px;
+    width:100%;
+}
+
+#tweet-heading, #visual-heading {
+    font-size: 40px;
+    font-weight:450;
+}
+
+.visual-feature {
+    color:black;
+    text-align: center;
+}
+
+#visual1, #visual2 {
+    height:300px;
+    max-width:400px;
+    width:100%;
+}
+
+.future-work {
+    background-color: #14171A;
+    padding:20px;
+    color:white;
+    text-align: center;
+    width:100%;
+}
+
+#future-heading {
+    font-weight:450;
+    font-size:40px;
+    text-align: center;
+}
+
+#future-cards {
+  text-align: center;
+}
+
+.card {
+    background-color: #657786;
+}
+
+.card-header {
+    font-size:18px;
+}
+
+#csvIcon, #searchIcon, #tweetIcon, #topicIcon {
+    font-size: 30px;
 }

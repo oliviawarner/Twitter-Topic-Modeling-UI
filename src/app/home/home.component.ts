@@ -2,6 +2,8 @@
 import { Component } from '@angular/core';
 //router import (nav)
 import { Router } from '@angular/router';
+
+//Icons: https://www.npmjs.com/package/@fortawesome/angular-fontawesome
 //twitter icon import
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 

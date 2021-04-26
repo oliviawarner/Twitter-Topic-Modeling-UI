@@ -1,18 +1,107 @@
+<!--Features Component-->
+
 <!--Navigation Links-->
+<!--Router Links: https://angular.io/guide/router-->
 <header class="mb-auto">
-    <div>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
+      <nav class="nav nav-masthead justify-content-center">
         <a routerLink="" id="home-link">Home</a>
         <a routerLink="/features" id="home-link">Features</a>
         <a routerLink="/team" id="home-link">Team</a>
       </nav>
-    </div>
 </header>
 
+<!--Bootstrap Jumbotron: https://getbootstrap.com/docs/4.0/components/jumbotron/-->
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 id="features-heading">Features</h1>
-      <p class="lead"></p>
+      <p class="lead">The Twitter Topic Modeling System has many valuable features that can benefit your company...</p>
       </div>
 </div>
+
+<div class="row">
+  <div class="col">
+    <div class="tweet-feature">
+      <h1><span id="pill" class="badge rounded-pill">1</span></h1>
+      <h1 id="tweet-heading">Tweet List</h1>
+      <p class="lead">
+        Search public Twitter users and generate reports on malicious content
+      </p>
+    <br>
+    <img id="tweet-list" src="assets/img/tweet-list.png">
+    </div>
+</div>
+
+<div class="col">
+  <div class="visual-feature">
+    <h1><span id="pill" class="badge rounded-pill">2</span></h1>
+    <h1 id="visual-heading">Visualizations</h1>
+      <p class="lead">View graph visualizations based on user tweet content</p>
+        <img id="visual1" src="assets/img/visual1.png">
+        <img id="visual2" src="assets/img/visual2.png">
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!--Bootstrap Cards: https://getbootstrap.com/docs/5.0/components/card/-->
+<div class="future-work">
+  <h1 id="future-heading">Future Development</h1>
+  <br>
+  <div class="future-cards">
+
+  <div class="row">
+    <div class="col">
+      <div class="card text-white" style="max-width: 18rem;">
+        <div class="card-header">
+          <fa-icon [icon]="csvIcon" id="csvIcon"></fa-icon><br><br>
+          Export to CSV
+        </div>
+        <div class="card-body">
+         <li>Export generated report as csv file containing all organized data</li>
+        </div>
+      </div>
+    </div>
+
+  <div class="col">
+    <div class="card text-white" style="max-width: 18rem;">
+      <div class="card-header">
+        <fa-icon [icon]="searchIcon" id="searchIcon"></fa-icon><br><br>
+          Search Functionality
+      </div>
+      <div class="card-body">
+        <li>Search by location</li>
+        <li>Search by hashtags/trends</li>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card text-white" style="max-width: 18rem;">
+      <div class="card-header">
+        <fa-icon [icon]="tweetIcon" id="tweetIcon"></fa-icon><br><br>
+        Tweet Functionality
+      </div>
+        <div class="card-body">
+            <li>Flag tweets without the use of a predetermined database</li>
+        </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card text-white" style="max-width: 18rem;">
+      <div class="card-header">
+        <fa-icon [icon]="topicIcon" id="topicIcon"></fa-icon><br><br>
+        Topic Modeling Functionality
+      </div>
+      <div class="card-body">
+          <li>Increase term frequency</li>
+          <li>Implement emotion classification</li>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
 
