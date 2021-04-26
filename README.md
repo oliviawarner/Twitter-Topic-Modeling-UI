@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Directions for running the UI *note the api must be running to use full fucntionaitly https://github.com/xjj1002/TwitterTopicModeling*
+- Open in visual studio 
+- run command `npm install` to install all packages needed
+- run command `npm run start` to run the UI application
+- Go in any browser to localhost:4200 and the UI should load
