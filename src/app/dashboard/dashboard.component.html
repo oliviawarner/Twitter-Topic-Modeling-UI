@@ -1,8 +1,7 @@
 <!--Dashboard Component-->
 <!--Contains Topic Modeling Visuals-->
 
-<!--Resource: Bootstrap Dashboard Example Revised-->
-
+<!--Navigation Bar w/ Search: https://getbootstrap.com/docs/4.0/components/navbar/-->
 <!--Navigation Header-->
 <nav class="navbar flex-md-nowrap p-0 shadow" id="dash-nav">
     <!--Twitter Icon and Application Name-->
@@ -26,10 +25,10 @@
     </div>
   </nav>
 
-        <!--Dashboard Heading Class-->
+        <!--Dashboard Heading-->
+        <!--Bootstap Flex: https://getbootstrap.com/docs/4.0/utilities/flex/-->
         <div class="d-flex justify-content-between align-items-center" id="dashboard">
           <h1 id="dashboard-heading">Dashboard</h1>
-
             <!--Report and CSV Button Group-->
             <div class="btn-group me-2" id="dashBtns">
               <a [routerLink] = "['/reports']" id="reportsLink"><button type="button" class="btn btn-sm btn-outline-primary"><fa-icon [icon]="reportsIcon" id="reportsIcon"></fa-icon> View Reports</button></a>
@@ -80,7 +79,7 @@
           </div>
         </ng-container>
         <ng-template #loadingSpinner>
-          Loading.....
+          Loading User.....
         </ng-template>
 
 
