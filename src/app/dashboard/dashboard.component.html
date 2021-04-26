@@ -43,7 +43,9 @@
         <ng-container *ngIf="!isLoading; else loadingSpinner">
           <div class="visuals-container" *ngIf="!!report">
             <div class="report-header">
-              ReportName: {{report.reportName}}  Report ID: {{report.id}} <span class="malflag" *ngIf="report.malFlag">Malicious Conent</span>
+             <span>{{report.reportName}}</span>
+             <span class="report-date">{{report.createdAt | date:'medium'}}</span>
+             <span class="malflag" *ngIf="report.malFlag">Malicious Conent</span>
             </div>
             <!--left hand side where tweets are displayed-->
               <div>
