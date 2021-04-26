@@ -7,19 +7,21 @@
   </div>
 </header>
 
+<!--Bootstrap Jumbotron: https://getbootstrap.com/docs/4.0/components/jumbotron/-->
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <!--Report Heading-->
     <h1 id="reports-heading">Reports</h1>
     <!--Report copywriting-->
-    <p class="lead">View a created report</p>
+    <p class="lead">View a generated report below</p>
     </div>
 </div>
 
 <div class="container">
 <div class="reportItem" >
+  
   <!--matcards for each report that needs to be displayed-->
-  <!--https://material.angular.io/components/card/overview-->
+  <!--Angular Material Cards: https://material.angular.io/components/card/overview-->
   <mat-card *ngFor="let report of (reportList | async)" style="width: 100%;">
     <mat-card-title>{{report.id}} - {{report.reportName}}</mat-card-title>
     <mat-card-subtitle>{{report.createdAt | date:'medium'}}</mat-card-subtitle>
